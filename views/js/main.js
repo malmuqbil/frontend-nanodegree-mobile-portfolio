@@ -454,7 +454,7 @@ var resizePizzas = function(size) {
         var dx = determineDx(randomPizzaContainer[i], size);
         newwidth[i] = (randomPizzaContainer[i].offsetWidth + dx) + 'px';
     }
-    for (var i = 0; i < pizzaContainerLength; i++) {
+    for (i = 0; i < pizzaContainerLength; i++) {
      randomPizzaContainer[i].style.width = newwidth[i];   
     }
     }
@@ -474,7 +474,6 @@ window.performance.mark("mark_start_generating"); // collect timing data
 var pizzasDiv = document.getElementById("randomPizzas");
 // I had created this varible out the scoop 
 for (var i = 2; i < 100; i++) {
-  pizzasDiv ;
   pizzasDiv.appendChild(pizzaElementGenerator(i));
 }
 
@@ -509,14 +508,13 @@ function updatePositions() {
   var items = document.querySelectorAll('.mover');
   
    var scrollTop = document.documentElement.scrollTop || document.body.scrollTop;
-    var phase = Math.sin((scrollTop / 1250) + (i % 5));
+  var phase;
   for (var i = 0; i < items.length; i++) {
     // document.body.scrollTop is no longer supported in Chrome.
-    var scrollTop = document.documentElement.scrollTop || document.body.scrollTop;
-    var phase = Math.sin((scrollTop / 1250) + (i % 5));
+    phase = Math.sin((scrollTop / 1250) + (i % 5));
   }
-    //create new loop 
- for (var i = 0; i < items.length; i++) {
+    //create new loop
+ for (i = 0; i < items.length; i++) {
       items[i].style.left = items[i].basicLeft + 100 * phase + 'px';
  }
   // User Timing API to the rescue again. Seriously, it's worth learning.
