@@ -509,14 +509,10 @@ function updatePositions() {
   
    var scrollTop = document.documentElement.scrollTop || document.body.scrollTop;
   var phase;
-  for (var i = 0; i < items.length; i++) {
-    // document.body.scrollTop is no longer supported in Chrome.
+  for (var i = 0, phase, len = items.length; i < len; i++) {
     phase = Math.sin((scrollTop / 1250) + (i % 5));
-  }
-    //create new loop
- for (i = 0; i < items.length; i++) {
-      items[i].style.left = items[i].basicLeft + 100 * phase + 'px';
- }
+    items[i].style.left = items[i].basicLeft + 100 * phase + 'px';
+}
   // User Timing API to the rescue again. Seriously, it's worth learning.
   // Super easy to create custom metrics.
   window.performance.mark("mark_end_frame");
