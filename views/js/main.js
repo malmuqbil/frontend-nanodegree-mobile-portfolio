@@ -509,7 +509,6 @@ function updatePositions() {
   
     // I had created this varible out the scoop 
    var scrollTop = document.documentElement.scrollTop || document.body.scrollTop;
-    var phase;
   for (var i = 0, phase, len = items.length; i < len; i++) {
     phase = Math.sin((scrollTop / 1250) + (i % 5));
     items[i].style.left = items[i].basicLeft + 100 * phase + 'px';
